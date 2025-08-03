@@ -3,9 +3,10 @@ import Counter from './Counter';
 import TodoList from './TodoList';
 import { Timer, Stopwatch} from './Stopwatch';
 import Accordian from './Accordian';
+import MessagingApp from './MessagingApp';
 
 function Menu() {
-  const buttonTabs = ["Home", "Todo", "Counter"]
+  const buttonTabs = ["Home", "Todo", "Counter", "Messages"]
   const dropdownTabs = ["Stopwatch", "Timer",]
   const [activeTab, setActiveTab] = useState("Home")
   const toggleActiveTab = (tab) => {
@@ -29,6 +30,7 @@ function Menu() {
         case "Timer": return <Timer />;
         case "Todo": return <TodoList />;
         case "Counter": return <Counter />;
+        case "Messages": return <MessagingApp />
         default: return null;
     }
   }
