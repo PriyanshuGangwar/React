@@ -4,7 +4,8 @@ import TodoList from './TodoList';
 import { Timer, Stopwatch} from './Stopwatch';
 
 function Menu() {
-  const tabs = ["Home", "Stopwatch", "Timer", "Todo", "Counter"]
+  const buttonTabs = ["Home", "Todo", "Counter"]
+  const dropdownTabs = ["Stopwatch", "Timer",]
   const [activeTab, setActiveTab] = useState("Home")
   const toggleActiveTab = (tab) => {
     console.log("tab", tab);
@@ -13,7 +14,7 @@ function Menu() {
 
   const renderHomePage = () => {
     return(
-        <div> Welcome To Home Page! </div>
+        <div style={{color: "Black"}}> Welcome To Home Page! </div>
     );
   }
 
@@ -31,10 +32,23 @@ function Menu() {
   return (
     <div className="tabs-container">
       <div className="tabs-header">
-      	{tabs.map(tab => (
-      		<button onClick={() => toggleActiveTab(tab)}>{tab}</button> 
-      	))}
-      </div>
+        {/* Render as buttons */}
+        {buttonTabs.map(tab => (
+            <button key={tab} onClick={() => toggleActiveTab(tab)}>
+            {tab}
+            </button>
+        ))}
+
+        {/* Render dropdown */}
+        <select value={dropdownTabs.includes(activeTab) ? activeTab : ""} onChange={(e) => toggleActiveTab(e.target.value)} >
+            <option value="">Clock</option>
+            {dropdownTabs.map(tab => (
+                <option key={tab} value={tab}>
+                    {tab}
+                </option>
+            ))}
+        </select>
+        </div>
       <div className="tabs-content">{renderContent()}</div>
     </div>
   );
