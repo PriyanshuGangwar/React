@@ -1,0 +1,23 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+./react-sheet/node_modules/
+./react-sheet/.pnp
+./react-sheet/.pnp.js
+
+# testing
+./react-sheet/coverage
+
+# production
+./react-sheet/build
+
+# misc
+./react-sheet/.DS_Store
+./react-sheet/.env.local
+./react-sheet/.env.development.local
+./react-sheet/.env.test.local
+./react-sheet/.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
