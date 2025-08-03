@@ -85,8 +85,11 @@ export function Stopwatch() {
   return (
     <div className='Stopwatch' >
       <p>Time: {timer}</p>
-      <button onClick={startStopwatch}>Start Stopwatch</button>
-      <button onClick={stopStopwatch}>Stop Stopwatch</button>
+      {stopwatchRunning ?
+        <button onClick={stopStopwatch}>Stop</button>
+      :
+        <button onClick={startStopwatch}>Start</button>
+      }
       <button onClick={resetStopwatch}>Reset</button>
     </div>
   );
