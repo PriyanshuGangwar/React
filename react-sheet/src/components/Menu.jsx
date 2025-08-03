@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Counter from './Counter';
 import TodoList from './TodoList';
 import { Timer, Stopwatch} from './Stopwatch';
+import Accordian from './Accordian';
 
 function Menu() {
   const buttonTabs = ["Home", "Todo", "Counter"]
@@ -14,7 +15,10 @@ function Menu() {
 
   const renderHomePage = () => {
     return(
-        <div style={{color: "Black"}}> Welcome To Home Page! </div>
+        <>
+            <div style={{color: "Black"}}> Welcome To Home Page! </div>
+            <Accordian />
+        </>
     );
   }
 
